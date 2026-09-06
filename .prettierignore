@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build output
+dist
+build
+out
+
+# Environment files
+.env
+.env.*
+
+# Generated Prisma client / migration snapshots
+backend/prisma/migrations
+backend/prisma/dev.db
+
+# Lockfiles
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
