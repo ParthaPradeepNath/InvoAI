@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json({ limit: "2mb" }));
 
 app.get("/api/health", (_req, res) => {
-  res.json({ success: true, message: "AI Invoice API is running" });
+  res.json({ success: true, message: "InvoAI API is running" });
 });
 
 app.use("/api/auth", authRoutes);

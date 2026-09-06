@@ -1,7 +1,7 @@
 {
-  "name": "ai-invoice-backend",
+  "name": "invo-ai-backend",
   "version": "1.0.0",
-  "description": "Backend for AI Invoice Generator",
+  "description": "Backend for InvoAI (AI invoice generator)",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
@@ -14,9 +14,9 @@
     "format": "prettier --write \"src/**/*.js\""
   },
   "dependencies": {
-    "@ai-sdk/google": "^1.2.5",
+    "@ai-sdk/google": "^4.0.64",
     "@prisma/client": "^6.3.0",
-    "ai": "^4.1.0",
+    "ai": "^7.0.93",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",

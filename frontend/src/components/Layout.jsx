@@ -42,7 +42,7 @@ function Layout() {
                 <FileText size={18} />
               </div>
               <div>
-                <p className="text-sm font-bold leading-none">InvoiceAI</p>
+                <p className="text-sm font-bold leading-none">InvoAI</p>
                 <p className="text-xs text-gray-400">Generator</p>
               </div>
             </div>
@@ -75,7 +75,7 @@ function Layout() {
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white">
                 <FileText size={18} />
               </div>
-              <p className="text-sm font-bold">InvoiceAI</p>
+              <p className="text-sm font-bold">InvoAI</p>
             </div>
             <button onClick={handleLogout} className="text-gray-500" aria-label="Log out">
               <LogOut size={20} />

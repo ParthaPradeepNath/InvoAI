@@ -1,10 +1,10 @@
 {
-  "name": "ai-invoice-generator",
+  "name": "invo-ai",
   "private": true,
   "version": "1.0.0",
   "scripts": {
     "dev": "pnpm --parallel dev:backend dev:frontend",
-    "dev:backend": "pnpm --filter ai-invoice-backend dev",
+    "dev:backend": "pnpm --filter invo-ai-backend dev",
     "dev:frontend": "pnpm --filter frontend dev",
     "build": "pnpm --filter frontend build",
     "format": "prettier --write .",

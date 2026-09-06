@@ -32,7 +32,7 @@ function LandingPage() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
             <FileText size={20} />
           </div>
-          <span className="text-lg font-bold">InvoiceAI</span>
+          <span className="text-lg font-bold">InvoAI</span>
         </div>
         <nav className="flex items-center gap-3">
           {user ? (
@@ -70,8 +70,8 @@ function LandingPage() {
             Create beautiful invoices <span className="text-primary">in seconds</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-gray-500">
-            InvoiceAI helps freelancers and small businesses generate professional invoices, powered
-            by AI. Describe what you did — we&apos;ll craft the details, you get paid faster.
+            InvoAI helps freelancers and small businesses generate professional invoices, powered by
+            AI. Describe what you did — we&apos;ll craft the details, you get paid faster.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
@@ -109,7 +109,7 @@ function LandingPage() {
 
       <footer className="border-t border-gray-200 bg-white">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-gray-400 md:flex-row">
-          <span>© {new Date().getFullYear()} InvoiceAI. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} InvoAI. All rights reserved.</span>
           <span>Built with React, Express & Gemini</span>
         </div>
       </footer>

@@ -1,4 +1,4 @@
-import { google } from "@ai-sdk/google";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { generateObject } from "ai";
 import { z } from "zod";
 import { protect } from "../middlewares/auth.js";
@@ -8,32 +8,23 @@ const router = Router();
 
 router.use(protect);
 
-const itemSchema = z.object({
-  description: z.string(),
-  quantity: z.number().positive(),
-  unitPrice: z.number().nonnegative(),
-});
+let googleProvider = null;
 
-const invoiceSchema = z.object({
-  clientName: z.string(),
-  clientEmail: z.string().email(),
-  clientAddress: z.string().optional(),
-  currency: z.string().default("USD"),
-  items: z.array(itemSchema).min(1),
-  notes: z.string().optional(),
-});
-
-async function requireModel(req, res) {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    res.status(503).json({
-      success: false,
-      message:
-        "Gemini API key not configured. Set GEMINI_API_KEY in the backend .env to enable AI features.",
+function getGoogleProvider() {
+  if (!googleProvider) {
+    googleProvider = createGoogleGenerativeAI({
+      apiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY,
     });
+  }
+  return googleProvider;
+}
+
+function requireModel() {
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+  if (!apiKey) {
     return null;
   }
-  return google("gemini-1.5-flash", { apiKey });
+  return getGoogleProvider()("gemini-3.6-flash");
 }
 
 router.post("/generate", async (req, res) => {
@@ -45,8 +36,14 @@ router.post("/generate", async (req, res) => {
         .json({ success: false, message: "No line items provided to describe" });
     }
 
-    const model = await requireModel(req, res);
-    if (!model) return;
+    const model = requireModel();
+    if (!model) {
+      return res.status(503).json({
+        success: false,
+        message:
+          "Gemini API key not configured. Set GEMINI_API_KEY in the backend .env to enable AI features.",
+      });
+    }
 
     const result = await generateObject({
       model,
@@ -85,8 +82,14 @@ router.post("/draft", async (req, res) => {
       return res.status(400).json({ success: false, message: "Description text is required" });
     }
 
-    const model = await requireModel(req, res);
-    if (!model) return;
+    const model = requireModel();
+    if (!model) {
+      return res.status(503).json({
+        success: false,
+        message:
+          "Gemini API key not configured. Set GEMINI_API_KEY in the backend .env to enable AI features.",
+      });
+    }
 
     const result = await generateObject({
       model,

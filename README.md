@@ -1,4 +1,4 @@
-# AI Invoice Generator
+# InvoAI
 
 A full-stack invoice generator with AI-powered assistance. Describe your work in plain language and let AI draft professional invoices, or build invoices manually and export them as PDFs.
 
@@ -53,8 +53,8 @@ GEMINI_API_KEY="your-gemini-key"
 ### 3. Run database migrations
 
 ```bash
-pnpm --filter ai-invoice-backend exec prisma migrate deploy
-pnpm --filter ai-invoice-backend exec prisma generate
+pnpm --filter invo-ai-backend exec prisma migrate deploy
+pnpm --filter invo-ai-backend exec prisma generate
 ```
 
 ### 4. Start the app
