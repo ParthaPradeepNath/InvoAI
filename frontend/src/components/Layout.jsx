@@ -42,7 +42,7 @@ function Layout() {
               <NavLink to="/dashboard" className={navLinkClass}>
                 <LayoutDashboard size={18} /> Dashboard
               </NavLink>
-              <NavLink to="/invoices" className={navLinkClass}>
+              <NavLink to="/invoices" end className={navLinkClass}>
                 <ReceiptText size={18} /> Invoices
               </NavLink>
               <NavLink to="/invoices/new" className={navLinkClass}>
@@ -91,6 +91,7 @@ function Layout() {
               </NavLink>
               <NavLink
                 to="/invoices"
+                end
                 className={({ isActive }) =>
                   `rounded-lg p-2 ${isActive ? "text-primary" : "text-gray-400"}`
                 }
