@@ -30,9 +30,7 @@ function LandingPage() {
     <div className="bg-[#fcfbfc]">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
-            <Logo size={20} />
-          </div>
+          <Logo size={20} />
           <span className="text-lg font-bold">InvoAI</span>
         </div>
         <nav className="flex items-center gap-3">

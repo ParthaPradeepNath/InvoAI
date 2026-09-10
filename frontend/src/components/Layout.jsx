@@ -32,9 +32,7 @@ function Layout() {
         <aside className="sticky top-6 hidden h-[calc(100vh-3rem)] w-60 shrink-0 flex-col justify-between rounded-2xl border border-gray-200 bg-white p-4 md:flex">
           <div>
             <div className="mb-6 flex items-center gap-2 px-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white">
-                <Logo size={18} />
-              </div>
+              <Logo size={18} />
               <div>
                 <p className="text-sm font-bold leading-none">InvoAI</p>
                 <p className="text-xs text-gray-400">Generator</p>
@@ -66,9 +64,7 @@ function Layout() {
         <main className="min-w-0 flex-1">
           <header className="mb-6 flex items-center justify-between md:hidden">
             <div className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white">
-                <Logo size={18} />
-              </div>
+              <Logo size={18} />
               <p className="text-sm font-bold">InvoAI</p>
             </div>
             <button onClick={handleLogout} className="text-gray-500" aria-label="Log out">
