@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FileText, Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
+import Logo from "../../components/Logo";
 import toast from "react-hot-toast";
 
 function SignUp() {
@@ -30,7 +31,7 @@ function SignUp() {
       <div className="w-full max-w-md">
         <div className="mb-8 flex flex-col items-center text-center">
           <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
-            <FileText size={26} />
+            <Logo size={26} />
           </div>
           <h1 className="text-2xl font-bold">Create your account</h1>
           <p className="text-sm text-gray-500">Start generating professional invoices</p>

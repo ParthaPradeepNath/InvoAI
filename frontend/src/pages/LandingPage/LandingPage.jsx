@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { FileText, Sparkles, Download, ShieldCheck, ArrowRight } from "lucide-react";
+import { Sparkles, Download, ShieldCheck, ArrowRight } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
+import Logo from "../../components/Logo";
 
 const features = [
   {
@@ -30,7 +31,7 @@ function LandingPage() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
-            <FileText size={20} />
+            <Logo size={20} />
           </div>
           <span className="text-lg font-bold">InvoAI</span>
         </div>

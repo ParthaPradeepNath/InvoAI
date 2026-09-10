@@ -1,13 +1,7 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import {
-  LayoutDashboard,
-  ReceiptText,
-  PlusCircle,
-  UserCircle2,
-  LogOut,
-  FileText,
-} from "lucide-react";
+import { LayoutDashboard, ReceiptText, PlusCircle, UserCircle2, LogOut } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import Logo from "./Logo";
 
 const navLinkClass = ({ isActive }) =>
   `flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
@@ -39,7 +33,7 @@ function Layout() {
           <div>
             <div className="mb-6 flex items-center gap-2 px-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white">
-                <FileText size={18} />
+                <Logo size={18} />
               </div>
               <div>
                 <p className="text-sm font-bold leading-none">InvoAI</p>
@@ -73,7 +67,7 @@ function Layout() {
           <header className="mb-6 flex items-center justify-between md:hidden">
             <div className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white">
-                <FileText size={18} />
+                <Logo size={18} />
               </div>
               <p className="text-sm font-bold">InvoAI</p>
             </div>
